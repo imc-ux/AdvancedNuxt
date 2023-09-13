@@ -1,0 +1,7 @@
+.svn
+.vscode
+.nuxt
+.output
+node_modules
+dist
+package-lock.json
