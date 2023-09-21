@@ -2,9 +2,9 @@
 
 | | |
 | --- | --- |
-| Construction | [![nuxt v3.3.2](https://img.shields.io/badge/nuxt-v3.3.2-00DC82.svg)](https://nuxt.com/) [![pinia/nuxt v0.4.8](https://img.shields.io/badge/pinia/nuxt-v0.4.8-FFD859.svg)](https://pinia.vuejs.org/)                                                                                                                                                                                                                         |
-| Component    | [![element-plus v2.3.2](https://img.shields.io/badge/element--plus-v2.3.2-409EFF.svg)](https://element-plus.org/zh-CN/component/button.html) [![ej2-vue-ui-components v22.1.36](https://img.shields.io/badge/ej2--vue--ui--components-v22.1.36-FFF.svg)](https://ej2.syncfusion.com/vue/documentation/) [![vue-quill v1.1.1](https://img.shields.io/badge/vue--quill-v1.1.1-2C3E50.svg)](https://github.com/vueup/vue-quill) |
-| | |
+| Construction | [![nuxt v3.3.2](https://img.shields.io/badge/nuxt-v3.3.2-00DC82.svg)](https://nuxt.com/) [![pinia/nuxt v0.4.8](https://img.shields.io/badge/pinia/nuxt-v0.4.8-FFD859.svg)](https://pinia.vuejs.org/) |
+| Component  | [![element-plus v2.3.2](https://img.shields.io/badge/element--plus-v2.3.2-409EFF.svg)](https://element-plus.org/zh-CN/component/button.html) [![ej2-vue-ui-components v22.1.36](https://img.shields.io/badge/ej2--vue--ui--components-v22.1.36-FFF.svg)](https://ej2.syncfusion.com/vue/documentation/) [![vue-quill v1.1.1](https://img.shields.io/badge/vue--quill-v1.1.1-2C3E50.svg)](https://github.com/vueup/vue-quill) |
+| | |                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 ## Introduction
 
@@ -15,6 +15,8 @@
 - [Technologies](#technologies)
 - [Code Formatter](#code-formatter)
 - [Development](#development)
+  - [菜单设置](http://127.0.0.1:8011/cusys/nuxt/settings/)
+  - [统计管理](http://127.0.0.1:8011/cusys/nuxt/analysis/)
 - [Production](#production)
 
 ## Technologies
@@ -54,9 +56,9 @@ Start the development server on [http://127.0.0.1:8011/cusys/nuxt/](http://127.0
 
 The pages are generated from pages/
 
-菜单设置: [http://127.0.0.1:8011/cusys/nuxt/settings/](http://127.0.0.1:8011/cusys/nuxt/settings/)
+#### 菜单设置: [http://127.0.0.1:8011/cusys/nuxt/settings/](http://127.0.0.1:8011/cusys/nuxt/settings/)
 
-统计管理: [http://127.0.0.1:8011/cusys/nuxt/analysis/](http://127.0.0.1:8011/cusys/nuxt/analysis/)
+#### 统计管理: [http://127.0.0.1:8011/cusys/nuxt/analysis/](http://127.0.0.1:8011/cusys/nuxt/analysis/)
 
 ## Production
 
