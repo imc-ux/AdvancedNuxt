@@ -3,7 +3,7 @@
 ### Features
 
 - 菜单设置
-- 技术分享
+- 统计管理
 
 ### Bug Fixes
 
