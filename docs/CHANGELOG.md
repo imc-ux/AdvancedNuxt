@@ -1,4 +1,4 @@
-## [1.0.0]() (2023-09-28)
+## [1.0.0](https://github.com/imc-ux/AdvancedNuxt/releases/tag/v1.0.0) (2023-09-28)
 
 ### Features
 
