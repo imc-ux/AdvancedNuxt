@@ -25,6 +25,7 @@
   - [菜单设置](http://127.0.0.1:8011/cusys/nuxt/settings/)
   - [统计管理](http://127.0.0.1:8011/cusys/nuxt/analysis/)
 - [Production](#production)
+- [Links](#)
 
 ## Technologies
 
