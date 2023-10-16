@@ -1,5 +1,4 @@
-# AdvancedNuxt：Part of the UX system manages related page development
-
+<h1 align="center">Cusys based on Nuxt</h1>
 
 > Construction
 
