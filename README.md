@@ -1,5 +1,7 @@
 <h1 align="center">Cusys based on Nuxt</h1>
 
+<h3>此项目归档升级， 暂停维护</h3>
+
 > Construction
 
 [![nuxt v3.3.2](https://img.shields.io/badge/nuxt-v3.3.2-00DC82.svg)](https://nuxt.com/)
