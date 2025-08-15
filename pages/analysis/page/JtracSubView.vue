@@ -107,7 +107,7 @@ function onResetHandlerClick() {
 
 <template>
   <div style="width: 100%">
-    <div style="display: flex" class="mp-top-box">
+    <div style="display: flex" class="mp-top-box search-condition-box">
       <div style="display: flex; flex-grow: 1; width: 200px">
         <span style="width: 60px; margin-left: 10px">时间</span>
         <div style="width: 100%; height: 36px; margin-left: 5px; margin-right: 5px">

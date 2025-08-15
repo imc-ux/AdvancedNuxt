@@ -9,116 +9,121 @@ import { ref } from 'vue';
 const alertVisible = ref(true);
 
 interface Props {
-    message?: string;
-    icon?: number;
-    close: () => void;
+  message?: string;
+  icon?: number;
+  close: (data: string) => void;
+  optional?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    message: '',
-    icon: 0,
+  message: '',
+  icon: 0,
 });
 
-function onBtnCloseHandler() {
-    alertVisible.value = false
-    props.close()
+function onBtnCloseHandler(data: string) {
+  alertVisible.value = false;
+  props.close(data);
 }
-
 </script>
 
 <script lang="ts">
 export default {
-    name: 'component-alert',
+  name: 'component-alert',
 };
 </script>
 
 <template>
-    <el-dialog 
-    :model-value="alertVisible" 
-    :show-close="false" 
-    :close-on-click-modal="false" 
-    width="315px" 
-    draggable
-    align-center>
-        <div class="alert-content">
-            <div v-if="icon === 0" class="icon-box">
-                <el-image style="width: 40px; height: 40px" :src="icon_succeed" :fit="'fill'" />
-            </div>
-            <div v-else-if="icon === 1" class="icon-box">
-                <el-image style="width: 40px; height: 40px" :src="icon_warning" :fit="'fill'" />
-            </div>
-            <div v-else-if="icon === 2" class="icon-box">
-                <el-image style="width: 40px; height: 40px" :src="icon_question" :fit="'fill'" />
-            </div>
-            <div v-else="icon === 3" class="icon-box">
-                <el-image style="width: 40px; height: 40px" :src="icon_delete" :fit="'fill'" />
-            </div>
-            <span class="alert-message">{{props.message}}</span>
-        </div>
-        <template #footer>
-            <span class="dialog-footer">
-                <Button class="alert-button" :showIcon="false" @click="onBtnCloseHandler()">确定</Button>
-            </span>
-        </template>
-    </el-dialog>
+  <el-dialog :model-value="alertVisible" :show-close="false" :close-on-click-modal="false" width="315px" draggable align-center>
+    <div class="alert-content">
+      <div v-if="icon === 0" class="icon-box">
+        <el-image style="width: 40px; height: 40px" :src="icon_succeed" :fit="'fill'" />
+      </div>
+      <div v-else-if="icon === 1" class="icon-box">
+        <el-image style="width: 40px; height: 40px" :src="icon_warning" :fit="'fill'" />
+      </div>
+      <div v-else-if="icon === 2" class="icon-box">
+        <el-image style="width: 40px; height: 40px" :src="icon_question" :fit="'fill'" />
+      </div>
+      <div v-else="icon === 3" class="icon-box">
+        <el-image style="width: 40px; height: 40px" :src="icon_delete" :fit="'fill'" />
+      </div>
+      <span class="alert-message">{{ props.message }}</span>
+    </div>
+    <template #footer>
+      <span class="dialog-footer">
+        <Button class="alert-button" :showIcon="false" @click="onBtnCloseHandler('Y')">确定</Button>
+      </span>
+      <span v-if="props.optional" ml-5 class="dialog-footer">
+        <Button class="alert-button" :showIcon="false" @click="onBtnCloseHandler('N')">取消</Button>
+      </span>
+    </template>
+  </el-dialog>
 </template>
-
 
 <style>
 .el-dialog__header {
-    height: 28px;
-    background-color: #08adaa;
-    padding: 0px;
-    margin: 0px;
+  height: 28px;
+  /* background-color: #08adaa; */
+  background-color: var(--iux-alert-header-bg);
+  padding: 0px;
+  margin: 0px;
 }
 
 .alert-button {
-    width: 66px;
-    height: 24px;
-    font-size: 13px;
-    margin: auto;
-    background-color: #08adaa;
-    color: #fff;
+  width: 66px;
+  height: 24px;
+  font-size: 13px;
+  margin: auto;
+  /* background-color: #08adaa; */
+  background-color: var(--iux-alert-btn-bg);
+  /* color: #fff; */
+  color: var(--iux-alert-btn-color);
 }
 
 .alert-button:hover {
-    width: 66px;
-    height: 24px;
-    font-size: 13px;
-    margin: auto;
-    background-color: #08adaa;
-    color: #fff;
+  width: 66px;
+  height: 24px;
+  font-size: 13px;
+  margin: auto;
+  /* background-color: #08adaa; */
+  background-color: var(--iux-alert-btn-bg);
+  /* color: #fff; */
+  color: var(--iux-alert-btn-color);
 }
 
 .el-dialog__footer {
-    height: 40px;
-    padding: 0px;
-    margin: auto;
-    text-align: center;
+  height: 40px;
+  padding: 0px;
+  margin: auto;
+  text-align: center;
 }
 
 .alert-content {
-    display: flex;
-    align-items: center;
-    min-height: 70px;
-    width: auto;
-    padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  width: auto;
+  padding: 0px 15px;
 }
 
 .alert-message {
-    margin-left: 20px;
-    font-size: 14px;
-    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif,"微软雅黑";
-    color: #000;
+  margin-left: 20px;
+  font-size: 14px;
+  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif, '微软雅黑';
+  /* color: #000; */
+  color: var(--iux-alert-color);
 }
 
 .el-dialog__body {
-    padding: 8px;
+  padding: 8px;
 }
 
 .icon-box {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
+.el-dialog {
+  background: var(--iux-alert-bg);
+}
 </style>

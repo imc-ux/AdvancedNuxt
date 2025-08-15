@@ -1,0 +1,10 @@
+// @import './_variable.scss';
+// @import './_mixin.scss';
+
+@each $key, $value in $theme-color-map {
+  @include my-color-mode($key, $key == $default-theme) {
+    @each $name, $color-name in $theme-variables {
+      --#{$prefix}#{$name}: #{map-get($value, $color-name)};
+    }
+  }
+}

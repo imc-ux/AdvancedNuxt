@@ -6,8 +6,9 @@ const instance = axios.create({
   timeout: 60000,
 });
 
-export const SERVER_URL = 'http://109.14.20.45:6636/ux';
-// const SERVER_URL = 'http://109.14.6.244:7777';
+// export const SERVER_URL = 'http://109.14.20.45:6636/ux';
+export const SERVER_URL = 'http://109.14.6.43:6636/ux';
+// export const SERVER_URL = 'http://109.14.6.244:7777';
 
 // 请求拦截器
 instance.interceptors.request.use(

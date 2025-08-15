@@ -9,14 +9,15 @@ import Alert from '../components/Alert.vue';
  * btnLabel: 自定义按钮文字，默认Yes/No
  * showCancelBtn: 默认显示No按钮
  **/
-export function ShowAlert(message: string, icon: number = 0) {
-  const vNode = h(Alert, { message, icon, close: closeHandler }, {});
+export function ShowAlert(message: string, icon: number = 0, onClose?: (string) => void, optional?: boolean) {
+  const vNode = h(Alert, { message, icon, close: closeHandler, optional: optional ?? false }, {});
 
   const container = document.createElement('div');
   document.body.appendChild(container);
   render(vNode, container);
 
-  function closeHandler() {
+  function closeHandler(data: string) {
+    onClose?.(data);
     document.body.removeChild(container);
   }
 }

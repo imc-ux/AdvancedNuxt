@@ -1,6 +1,4 @@
-<h1 align="center">Cusys based on Nuxt</h1>
-
-<h3>此项目归档升级， 暂停维护</h3>
+# AdvancedNuxt：Part of the UX system manages related page development
 
 > Construction
 
@@ -12,7 +10,6 @@
 [![element-plus v2.3.2](https://img.shields.io/badge/element--plus-v2.3.2-409EFF.svg)](https://element-plus.org/zh-CN/component/button.html)
 [![ej2-vue-ui-components v22.1.36](https://img.shields.io/badge/ej2--vue--ui--components-v22.1.36-FFF.svg)](https://ej2.syncfusion.com/vue/documentation/)
 [![vue-quill v1.1.1](https://img.shields.io/badge/vue--quill-v1.1.1-2C3E50.svg)](https://github.com/vueup/vue-quill)
-
 
 ## Introduction
 
@@ -26,7 +23,6 @@
   - [菜单设置](http://127.0.0.1:8011/cusys/nuxt/settings/)
   - [统计管理](http://127.0.0.1:8011/cusys/nuxt/analysis/)
 - [Production](#production)
-- [Links](#)
 
 ## Technologies
 
@@ -94,5 +90,25 @@ npm run generate
 生成.output， .output/public/文件夹下内容上传服务器。
 
 使用 generate 打包后每个对应的页面都会生成一个 html，打包的时候不能关闭后台，它会请求后台数据生成首屏的数据。
+
+## FAQ
+
+#### Cannot find module '...\node_modules\pinia\dist\pinia.mjs'
+
+```
+npm install --save pinia @pinia/nuxt pinia-plugin-persist --legacy-peer-deps
+```
+
+#### Failed to resolve import "element-plus"
+
+```
+npm install element-plus --save --legacy-peer-deps
+```
+
+#### Failed to resolve import "@vueup/vue-quill" from "pages\settings\index.vue". Does the file exist?
+
+```
+npm install @vueup/vue-quill@latest --legacy-peer-deps
+```
 
 [Go to Top](#table-of-contents)

@@ -23,11 +23,29 @@ export default {
             name: 'settings',
             component: resolve(__dirname, 'pages/settings/'),
           },
+          {
+            path: '/:id',
+            component: resolve(__dirname, 'pages/settings/[id].vue'),
+          },
         ]
       );
     },
   },
-  css: ['element-plus/dist/index.css'],
+  css: ['element-plus/dist/index.css', { src: '~/assects/scss/main.scss', lang: 'scss' }],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,
+          silenceDeprecations: ['import', 'color-functions', 'legacy-js-api', 'global-builtin'],
+          additionalData: `@use "~/assects/scss/_variable.scss" as *;@use "~/assects/scss/_mixin.scss" as *;`,
+        },
+      },
+    },
+  },
+  unocss: {
+    nuxtLayers: true,
+  },
   modules: [
     [
       '@pinia/nuxt',
@@ -35,11 +53,15 @@ export default {
         autoImports: ['defineStore', ['defineStore', 'definePiniaStore']],
       },
     ],
+    ['@unocss/nuxt'],
   ],
   ssr: false,
   app: {
     baseURL: '/cusys/nuxt/',
     buildAssetsDir: '/static/',
+  },
+  alias: {
+    '@@': '/<rootDir>',
   },
 
   // modules: ['@element-plus/nuxt'],
