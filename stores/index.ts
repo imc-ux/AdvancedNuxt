@@ -1,4 +1,5 @@
 import { useSettingsStore } from './settings/settingsStore';
 import { analysisStore } from './analysis/analysisStore';
 import { useJtracSubViewStore } from './analysis/jtracSubViewStore';
-export { useSettingsStore, analysisStore, useJtracSubViewStore };
+import { useStatisticStore } from './statistic/statisticStore';
+export { useSettingsStore, analysisStore, useJtracSubViewStore, useStatisticStore };

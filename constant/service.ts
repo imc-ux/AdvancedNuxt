@@ -10,4 +10,7 @@ export enum Settings {
   GetUserList = 'getUserList',
   GetUserOnlineTime = 'getUserOnlineTime',
   GetJtracStatsList = 'getJtracStatsList',
+  GetValidateMenuTemplate = 'getValidateMenuTemplate',
+  AddTemplate = 'addTemplate',
+  DeleteMenuTemplate = 'deleteMenuTemplate',
 }

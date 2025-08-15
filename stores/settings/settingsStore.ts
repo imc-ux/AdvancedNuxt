@@ -1,12 +1,16 @@
 import { defineStore } from 'pinia';
 import api from '../../api/request';
 import { Settings } from '../../constant/Service';
+import { SaveTemplateInfo } from '../../vo';
 
 interface settingsState {
   getValidateNoticeResult: any;
   addNewNoticeResult: any;
   getAllTypeResult: any;
   deleteNoticeResult: any;
+  getMenuTemplateResult: any;
+  addTemplateResult: any;
+  deleteMenuTemplateResult: any;
 }
 
 interface settingsAction {
@@ -14,6 +18,9 @@ interface settingsAction {
   addNewNotice(param: any): void;
   getAllType(param: any): void;
   deleteNotice(param: any): void;
+  getValidateMenuTemplate(param: any): void;
+  addTemplate(param: SaveTemplateInfo): void;
+  deleteMenuTemplate(param: string): void;
 }
 
 export const useSettingsStore = defineStore<string, settingsState, any, settingsAction>({
@@ -23,6 +30,9 @@ export const useSettingsStore = defineStore<string, settingsState, any, settings
     addNewNoticeResult: null,
     getAllTypeResult: null,
     deleteNoticeResult: null,
+    getMenuTemplateResult: null,
+    addTemplateResult: null,
+    deleteMenuTemplateResult: null,
   }),
   actions: {
     async getValidateNotice(param: any) {
@@ -63,6 +73,36 @@ export const useSettingsStore = defineStore<string, settingsState, any, settings
         })
         .catch(() => {
           this.deleteNoticeResult = null;
+        });
+    },
+    async getValidateMenuTemplate(param: any) {
+      await api
+        .get(Settings.GetValidateMenuTemplate, param)
+        .then((res: any) => {
+          this.getMenuTemplateResult = res;
+        })
+        .catch(() => {
+          this.getMenuTemplateResult = null;
+        });
+    },
+    async addTemplate(param: SaveTemplateInfo) {
+      await api
+        .get(Settings.AddTemplate, param)
+        .then((res: any) => {
+          this.addTemplateResult = res;
+        })
+        .catch(() => {
+          this.addTemplateResult = null;
+        });
+    },
+    async deleteMenuTemplate(param: string) {
+      await api
+        .get(Settings.DeleteMenuTemplate, param)
+        .then((res: any) => {
+          this.deleteMenuTemplateResult = res;
+        })
+        .catch(() => {
+          this.deleteMenuTemplateResult = null;
         });
     },
   },
